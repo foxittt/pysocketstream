@@ -15,15 +15,6 @@ The `pysocketstream` homepage is located at [https://github.com/semuconsulting/p
 ---
 ## <a name="currentstatus">Current Status</a>
 
-![Status](https://img.shields.io/pypi/status/pynmeagps)
-![Release](https://img.shields.io/github/v/release/semuconsulting/pynmeagps?include_prereleases)
-![Build](https://img.shields.io/github/workflow/status/semuconsulting/pynmeagps/pynmeagps)
-![Codecov](https://img.shields.io/codecov/c/github/semuconsulting/pynmeagps)
-![Release Date](https://img.shields.io/github/release-date-pre/semuconsulting/pynmeagps)
-![Last Commit](https://img.shields.io/github/last-commit/semuconsulting/pynmeagps)
-![Contributors](https://img.shields.io/github/contributors/semuconsulting/pynmeagps.svg)
-![Open Issues](https://img.shields.io/github/issues-raw/semuconsulting/pynmeagps)
-
 Sphinx API Documentation in HTML format is available at [https://www.semuconsulting.com/pysocketstream](https://www.semuconsulting.com/pysocketstream).
 
 Contributions welcome - please refer to [CONTRIBUTING.MD](https://github.com/semuconsulting/pynmeagps/blob/master/CONTRIBUTING.md).
@@ -48,7 +39,6 @@ The recommended way to install the latest version of `pysocketstream` is with
 ```shell
 python -m pip install --upgrade pysocketstream
 ```
-
 
 ---
 ## <a name="howtouse">How to Use</a>
@@ -78,8 +68,6 @@ b'$GNDTM,W84,,0.0,N,0.0,E,0.0,W84*71\r\n'
 ## <a name="author">Author & License Information</a>
 
 semuadmin@semuconsulting.com
-
-![License](https://img.shields.io/github/license/semuconsulting/pysocketstream.svg)
 
 `pysocketstream` is maintained entirely by volunteers. If you find it useful, a small donation would be greatly appreciated!
 
