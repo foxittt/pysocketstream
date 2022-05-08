@@ -29,10 +29,6 @@ Contributions welcome - please refer to [CONTRIBUTING.MD](https://github.com/sem
 In the following, `python` & `pip` refer to the Python 3 executables. You may need to type 
 `python3` or `pip3`, depending on your particular environment.
 
-![Python version](https://img.shields.io/pypi/pyversions/pynmeagps.svg?style=flat)
-[![PyPI version](https://img.shields.io/pypi/v/pynmeagps.svg?style=flat)](https://pypi.org/project/pynmeagps/)
-![PyPI downloads](https://img.shields.io/pypi/dm/pynmeagps.svg?style=flat)
-
 The recommended way to install the latest version of `pysocketstream` is with
 [pip](http://pypi.python.org/pypi/pip/):
 
