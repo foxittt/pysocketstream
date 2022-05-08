@@ -30,10 +30,12 @@ class SocketStream:
 
         :param sock socket: socket object
         :param int bufsize: (kwarg) internal buffer size (4096)
+        :param int readsize: (kwarg) num of bytes to read in iteration (0 = readline)
         """
 
         self._socket = sock
         self._bufsize = kwargs.get("bufsize", 4096)
+        self._readsize = kwargs.get("readsize", 0)
         self._buffer = bytearray()
         self._recv()  # populate initial buffer
 
@@ -101,3 +103,27 @@ class SocketStream:
                 break
 
         return line
+
+    def __iter__(self):
+        """Iterator."""
+
+        return self
+
+    def __next__(self) -> tuple:
+        """
+        Return next item in iteration.
+
+        :return: data
+        :rtype: object
+        :raises: StopIteration
+
+        """
+        if self._readsize == 0:
+            data = self.readline()
+            if data[-2:] == b"\x0d\x0a":  # CRLF
+                return data
+        else:
+            data = self.read(self._readsize)
+            if len(data) >= self._readsize:
+                return data
+        raise StopIteration
