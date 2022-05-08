@@ -109,12 +109,12 @@ class SocketStream:
 
         return self
 
-    def __next__(self) -> tuple:
+    def __next__(self) -> bytes:
         """
         Return next item in iteration.
 
         :return: data
-        :rtype: object
+        :rtype: bytes
         :raises: StopIteration
 
         """
