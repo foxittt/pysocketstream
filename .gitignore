@@ -11,12 +11,12 @@ Pipfile*.*
 /dist
 /docs/_build
 /references
-/pynmeagps_*
-/pynmeagps-*
-/pynmeagps.egg*
+/pysocketstream_*
+/pysocketstream-*
+/pysocketstream.egg*
 /__pycache__
 /.dbeaver
-/pynmeagps/__pycache__
+/pysocketstream/__pycache__
 *.pyc
 /examples/temp*.py
 /.pytest_cache/
