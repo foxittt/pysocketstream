@@ -1,4 +1,4 @@
-pynmeagps
+pysocketstream
 =========
 
 [Current Status](#currentstatus) |
@@ -8,32 +8,29 @@ pynmeagps
 
 `pysocketstream` is a simple utility class which wraps a socket object and allows it to be handled using standard stream-like `read(bytes)` and `readline()` methods.
 
-The intention is to make it as easy as possible to read, parse and utilise NMEA GNSS/GPS messages in Python applications. 
-
 The `pysocketstream` homepage is located at [https://github.com/semuconsulting/pysocketstream](https://github.com/semuconsulting/pysocketstream).
 
 ---
 ## <a name="currentstatus">Current Status</a>
 
+Currently in Beta.
+
 Sphinx API Documentation in HTML format is available at [https://www.semuconsulting.com/pysocketstream](https://www.semuconsulting.com/pysocketstream).
 
 Contributions welcome - please refer to [CONTRIBUTING.MD](https://github.com/semuconsulting/pynmeagps/blob/master/CONTRIBUTING.md).
 
-[Bug reports](https://github.com/semuconsulting/pynmeagps/blob/master/.github/ISSUE_TEMPLATE/bug_report.md) and [Feature requests](https://github.com/semuconsulting/pynmeagps/blob/master/.github/ISSUE_TEMPLATE/feature_request.md) - please use the templates provided.
+[Bug reports](https://github.com/semuconsulting/pysocketstream/blob/master/.github/ISSUE_TEMPLATE/bug_report.md) and [Feature requests](https://github.com/semuconsulting/pysocketstream/blob/master/.github/ISSUE_TEMPLATE/feature_request.md) - please use the templates provided.
 
 ---
 ## <a name="installation">Installation</a>
 
 `pysocketstream` is compatible with Python >=3.7 and has no third-party library dependencies.
 
-In the following, `python` & `pip` refer to the Python 3 executables. You may need to type 
-`python3` or `pip3`, depending on your particular environment.
-
 The recommended way to install the latest version of `pysocketstream` is with
 [pip](http://pypi.python.org/pypi/pip/):
 
 ```shell
-python -m pip install --upgrade pysocketstream
+python3 -m pip install --upgrade pysocketstream
 ```
 
 ---
@@ -43,7 +40,7 @@ python -m pip install --upgrade pysocketstream
 class SocketStream(socket, **kwargs)
 ```
 
-You can create an `SocketStream` object by calling the constructor with an active socket object. 
+You can create a `SocketStream` object by calling the constructor with an active socket object. 
 
 **NB:** It is the responsibility of the calliing application to monitor the returned data for error or end of stream conditions e.g. by checking length of returned data matches requested number of bytes.
 
