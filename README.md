@@ -6,7 +6,7 @@ pynmeagps
 [How to Use](#howtouse) |
 [Author & License](#author)
 
-`pysocketstream` is an simple utility class which wraps a socket object and allows it to be handled using standard stream-like `read(bytes)` and `readline()` methods.
+`pysocketstream` is a simple utility class which wraps a socket object and allows it to be handled using standard stream-like `read(bytes)` and `readline()` methods.
 
 The intention is to make it as easy as possible to read, parse and utilise NMEA GNSS/GPS messages in Python applications. 
 
