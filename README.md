@@ -15,6 +15,12 @@ The `pysocketstream` homepage is located at [https://github.com/semuconsulting/p
 
 Currently in Beta.
 
+![Build](https://img.shields.io/github/workflow/status/semuconsulting/pysocketstream/pysocketstream)
+![Release Date](https://img.shields.io/github/release-date-pre/semuconsulting/pysocketstream)
+![Last Commit](https://img.shields.io/github/last-commit/semuconsulting/pysocketstream)
+![Contributors](https://img.shields.io/github/contributors/semuconsulting/pysocketstream.svg)
+![Open Issues](https://img.shields.io/github/issues-raw/semuconsulting/pysocketstream)
+
 Sphinx API Documentation in HTML format is available at [https://www.semuconsulting.com/pysocketstream](https://www.semuconsulting.com/pysocketstream).
 
 Contributions welcome - please refer to [CONTRIBUTING.MD](https://github.com/semuconsulting/pynmeagps/blob/master/CONTRIBUTING.md).
