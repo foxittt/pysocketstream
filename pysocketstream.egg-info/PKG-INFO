@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: pysocketstream
+Version: 0.1.0
+Summary: Socket Stream Wrapper
+Home-page: https://github.com/semuconsulting/pynmeagps
+Author: semuadmin
+Author-email: semuadmin@semuconsulting.com
+License: BSD 3-Clause 'Modified' License
+Project-URL: Bug Tracker, https://github.com/semuconsulting/pysocketstream
+Project-URL: Documentation, https://github.com/semuconsulting/pysocketstream
+Project-URL: Sphinx API Documentation, https://www.semuconsulting.com/pysocketstream
+Project-URL: Source Code, https://github.com/semuconsulting/pysocketstream
+Keywords: pysocketstream socket
+Platform: Windows
+Platform: MacOS
+Platform: Linux
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 2 - Beta
+Classifier: Environment :: MacOS X
+Classifier: Environment :: Win32 (MS Windows)
+Classifier: Environment :: X11 Applications
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Topic :: Utilities
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+Allows sockets to be handled using stream-like `read(bytes)` and `readline()` methods
+
