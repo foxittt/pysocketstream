@@ -36,7 +36,7 @@ The recommended way to install the latest version of `pysocketstream` is with
 [pip](http://pypi.python.org/pypi/pip/):
 
 ```shell
-python3 -m pip install --upgrade pysocketstream
+python3 -m pip install -i https://testpypi.python.org/pypi pysocketstream
 ```
 
 ---
