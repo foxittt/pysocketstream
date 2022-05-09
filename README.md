@@ -23,7 +23,7 @@ Currently in Alpha.
 
 Sphinx API Documentation in HTML format is available at [https://www.semuconsulting.com/pysocketstream](https://www.semuconsulting.com/pysocketstream).
 
-Contributions welcome - please refer to [CONTRIBUTING.MD](https://github.com/semuconsulting/pynmeagps/blob/master/CONTRIBUTING.md).
+Contributions welcome - please refer to [CONTRIBUTING.MD](https://github.com/semuconsulting/pysocketstream/blob/master/CONTRIBUTING.md).
 
 [Bug reports](https://github.com/semuconsulting/pysocketstream/blob/master/.github/ISSUE_TEMPLATE/bug_report.md) and [Feature requests](https://github.com/semuconsulting/pysocketstream/blob/master/.github/ISSUE_TEMPLATE/feature_request.md) - please use the templates provided.
 
