@@ -2,7 +2,7 @@
 socket_stream class.
 
 A skeleton socket wrapper which provides basic stream-like
-read(bytes) and readline() methods.
+read(num), readuntil(separator) and readline() methods.
 
 NB: this will read from a socket indefinitely. It is the
 responsibility of the calling application to monitor
@@ -18,6 +18,8 @@ Created on 4 Apr 2022
 
 from socket import socket
 
+CRLF = b"\x0d\x0a"
+
 
 class SocketStream:
     """
@@ -30,12 +32,14 @@ class SocketStream:
 
         :param sock socket: socket object
         :param int bufsize: (kwarg) internal buffer size (4096)
-        :param int readsize: (kwarg) num of bytes to read in iteration (0 = readline)
+        :param int itersize: (kwarg) num of bytes to read in iterator (0 = readuntil)
+        :param int iterseparator: (kwarg) separator to use in iterator (CRLF)
         """
 
         self._socket = sock
         self._bufsize = kwargs.get("bufsize", 4096)
-        self._readsize = kwargs.get("readsize", 0)
+        self._itersize = kwargs.get("itersize", 0)
+        self._iterseparator = kwargs.get("iterseparator", CRLF)
         self._buffer = bytearray()
         self._recv()  # populate initial buffer
 
@@ -83,6 +87,29 @@ class SocketStream:
         self._buffer = self._buffer[num:]
         return bytes(data)
 
+    def readuntil(self, separator: bytes) -> bytes:
+        """
+        Read bytes from buffer until CRLF reached.
+        NB: always check that return data terminator is as specifed.
+
+        :param bytes separator: separator
+        :return: bytes
+        :rtype: bytes
+        """
+
+        line = b""
+        ln = len(separator)
+        while True:
+            data = self.read(1)
+            if len(data) == 1:
+                line += data
+                if line[-ln:] == separator:
+                    break
+            else:
+                break
+
+        return line
+
     def readline(self) -> bytes:
         """
         Read bytes from buffer until CRLF reached.
@@ -92,17 +119,7 @@ class SocketStream:
         :rtype: bytes
         """
 
-        line = b""
-        while True:
-            data = self.read(1)
-            if len(data) == 1:
-                line += data
-                if line[-2:] == b"\x0d\x0a":  # CRLF
-                    break
-            else:
-                break
-
-        return line
+        return self.readuntil(CRLF)
 
     def __iter__(self):
         """Iterator."""
@@ -113,17 +130,21 @@ class SocketStream:
         """
         Return next item in iteration.
 
+        If kwarg itersize = 0, will use readline(iterseparator).
+
         :return: data
         :rtype: bytes
         :raises: StopIteration
 
         """
-        if self._readsize == 0:
+
+        if self._itersize == 0:
+            ls = len(self._iterseparator)
             data = self.readline()
-            if data[-2:] == b"\x0d\x0a":  # CRLF
+            if data[-ls:] == self._iterseparator:
                 return data
         else:
-            data = self.read(self._readsize)
-            if len(data) >= self._readsize:
+            data = self.read(self._itersize)
+            if len(data) == self._itersize:
                 return data
         raise StopIteration

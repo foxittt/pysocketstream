@@ -31,7 +31,7 @@ setuptools.setup(
     },
     classifiers=[
         "Operating System :: OS Independent",
-        "Development Status :: 4 - Beta",
+        "Development Status :: 3 - Alpha",
         "Environment :: MacOS X",
         "Environment :: Win32 (MS Windows)",
         "Environment :: X11 Applications",
