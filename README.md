@@ -49,6 +49,7 @@ class SocketStream(socket, **kwargs)
 You can create a `SocketStream` object by calling the constructor with an active socket object. 
 
 **kwargs:**
+- `bufsize` - default buffer size (defaults to 4096)
 - `itersize` - number of bytes to read in iterator; if == 0, will use readuntil(iterseparator)
 - `iterseparator` - separator to use in iterator (defaults to CRLF)
  
