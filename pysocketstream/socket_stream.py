@@ -98,12 +98,12 @@ class SocketStream:
         """
 
         line = b""
-        ln = len(separator)
+        lns = len(separator)
         while True:
             data = self.read(1)
             if len(data) == 1:
                 line += data
-                if line[-ln:] == separator:
+                if line[-lns:] == separator:
                     break
             else:
                 break
@@ -139,9 +139,9 @@ class SocketStream:
         """
 
         if self._itersize == 0:
-            ls = len(self._iterseparator)
+            lns = len(self._iterseparator)
             data = self.readline()
-            if data[-ls:] == self._iterseparator:
+            if data[-lns:] == self._iterseparator:
                 return data
         else:
             data = self.read(self._itersize)
