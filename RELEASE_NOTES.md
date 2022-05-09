@@ -1,5 +1,9 @@
 # pysocketstream Release Notes
 
-### RELEASE 0.1.0-beta
+### RELEASE 0.1.2-alpha
 
-1. Initial public beta release
+1. Add readuntil method and configurable iterator.
+
+### RELEASE 0.1.0-alpha
+
+1. Initial public alpha release
