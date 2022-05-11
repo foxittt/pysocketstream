@@ -1,5 +1,5 @@
 <?xml version = "1.0"?>
-<project name="pynmeagps" default="build">
+<project name="pysocketstream" default="build">
 	<property name="module.name" value="pysocketstream" />
 	<property name="version" value="0.1.2" />
 	<condition property="python" value="python">
@@ -83,7 +83,7 @@
 			<arg line="${coverage_html_args}"/>
   		</exec>
    	</target>
-	<target name = "document" depends="coverage">
+	<target name = "document" depends="test">
 		<echo>Documenting...</echo>
 		<exec executable="${sphinx}">
 			<arg line="${apidoc_args}"/>

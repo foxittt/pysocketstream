@@ -18,6 +18,7 @@ Created on 4 Apr 2022
 
 from socket import socket
 
+LF = b"\x0a"
 CRLF = b"\x0d\x0a"
 
 
@@ -33,13 +34,13 @@ class SocketStream:
         :param sock socket: socket object
         :param int bufsize: (kwarg) internal buffer size (4096)
         :param int itersize: (kwarg) num of bytes to read in iterator (0 = readuntil)
-        :param int iterseparator: (kwarg) separator to use in iterator (CRLF)
+        :param int iterseparator: (kwarg) separator to use in iterator ("\n", 0x0a)
         """
 
         self._socket = sock
         self._bufsize = kwargs.get("bufsize", 4096)
         self._itersize = kwargs.get("itersize", 0)
-        self._iterseparator = kwargs.get("iterseparator", CRLF)
+        self._iterseparator = kwargs.get("iterseparator", LF)
         self._buffer = bytearray()
         self._recv()  # populate initial buffer
 
@@ -89,7 +90,7 @@ class SocketStream:
 
     def readuntil(self, separator: bytes) -> bytes:
         """
-        Read bytes from buffer until CRLF reached.
+        Read bytes from buffer until separator reached.
         NB: always check that return data terminator is as specifed.
 
         :param bytes separator: separator
@@ -113,13 +114,13 @@ class SocketStream:
     def readline(self) -> bytes:
         """
         Read bytes from buffer until CRLF reached.
-        NB: always check that return data terminator is CRLF.
+        NB: always check that return data terminator is LF.
 
         :return: bytes
         :rtype: bytes
         """
 
-        return self.readuntil(CRLF)
+        return self.readuntil(LF)
 
     def __iter__(self):
         """Iterator."""
@@ -130,6 +131,7 @@ class SocketStream:
         """
         Return next item in iteration.
 
+        If kwarg itersize > 0, will return fixed number of bytes.
         If kwarg itersize = 0, will use readline(iterseparator).
 
         :return: data

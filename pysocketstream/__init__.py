@@ -9,6 +9,6 @@ Created on 5 May 2022
 
 
 from pysocketstream._version import __version__
-from pysocketstream.socket_stream import SocketStream, CRLF
+from pysocketstream.socket_stream import SocketStream, CRLF, LF
 
 version = __version__
