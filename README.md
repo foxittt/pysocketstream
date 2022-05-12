@@ -36,6 +36,8 @@ Contributions welcome - please refer to [CONTRIBUTING.MD](https://github.com/sem
 The recommended way to install the latest version of `pysocketstream` is with
 [pip](http://pypi.python.org/pypi/pip/):
 
+**NB:** `pysocketstream` is only available in Test PyPi during Alpha.
+
 ```shell
 python3 -m pip install -i https://testpypi.python.org/pypi pysocketstream
 ```

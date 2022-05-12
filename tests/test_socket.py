@@ -64,7 +64,7 @@ class SocketTest(unittest.TestCase):
     # Helper methods
     # *******************************************
 
-    def testSocketStub(self):
+    def testSocketStub(self):  # test for LF-delimited iterator
         EXPECTED_RESULTS = (
             b"\xb5b\x06\x8b\x0c\x00\x00\x00\x00\x00h\x00\x11@\xb6\xf3\x9d?\xdb=\xb5b\x10\x02\x1c\x00m\xd8\x07\x00\x18 \x00\x00\xcd\x06\x00\x0e\xe4\xfe\xff\r\x03\xfa\xff\x05\t\x0b\x00\x0cm\xd8\x07\x00\xeeQ\xb5b\x10\x02\x18\x00r\xd8\x07\x00\x18\x18\x00\x00K\xfd\xff\x10@\x02\x00\x11#(\x00\x12r\xd8\x07\x00\x03\x9c$GNDTM,W84,,0.0,N,0.0,E,0.0,W84*71\r\n",
             b"$GNRMC,103607.00,A,5327.03942,N,10214.42462,W,0.046,,060321,,,A,V*0E\r\n",
@@ -93,7 +93,7 @@ class SocketTest(unittest.TestCase):
                     break
         self.assertEqual(i, 12)
 
-    def testFixedSize(self):  # test for simulated socket timeout
+    def testFixedSize(self):  # test for fixed byte length iterator
         EXPECTED_RESULTS = (
             b"\xb5b\x06\x8b\x0c\x00\x00\x00\x00\x00",
             b"h\x00\x11@\xb6\xf3\x9d?\xdb=",
