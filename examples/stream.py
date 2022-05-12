@@ -1,5 +1,5 @@
 """
-test_iter.py.
+stream.py.
 
 A simple test of the pysocketstream iterator.
 

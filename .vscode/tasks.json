@@ -169,7 +169,7 @@
                 "Pylint",
                 "Build",
                 "Test",
-                //"Coverage Report",
+                "Coverage Report",
                 "Sphinx HTML"
             ],
             "problemMatcher": []
