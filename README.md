@@ -16,6 +16,7 @@ The `pysocketstream` homepage is located at [https://github.com/semuconsulting/p
 Currently in Alpha.
 
 ![Build](https://img.shields.io/github/workflow/status/semuconsulting/pysocketstream/pysocketstream)
+![Codecov](https://img.shields.io/codecov/c/github/semuconsulting/pysocketstream)
 ![Release Date](https://img.shields.io/github/release-date-pre/semuconsulting/pysocketstream)
 ![Last Commit](https://img.shields.io/github/last-commit/semuconsulting/pysocketstream)
 ![Contributors](https://img.shields.io/github/contributors/semuconsulting/pysocketstream.svg)
